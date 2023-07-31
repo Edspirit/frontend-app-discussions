@@ -9,6 +9,16 @@
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
 
+.lang_fa {
+  * {
+    font-family: IRANSans, FontAwesome, sans-serif !important ;
+  }
+}
+.lang_ar {
+  * {
+    font-family: NotoSansArabic, FontAwesome, sans-serif !important ;
+  }
+}
 #post,
 #comment,
 #reply,
