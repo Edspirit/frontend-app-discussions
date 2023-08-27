@@ -35,7 +35,7 @@
   "dependencies": {
     "@edx/brand": "https://github.com/Edspirit/brand-openedx",
     "@edx/frontend-component-footer": "https://github.com/Edspirit/frontend-component-footer#v12.1.2",
-    "@edx/frontend-component-header": "4.0.0",
+    "@edx/frontend-component-header": "https://github.com/Edspirit/frontend-component-header#v4.4.1",
     "@edx/frontend-platform": "4.2.0",
     "@edx/paragon": "20.15.0",
     "@reduxjs/toolkit": "1.8.0",
