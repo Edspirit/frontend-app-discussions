@@ -26,10 +26,8 @@ import BlackoutInformationBanner from './BlackoutInformationBanner';
 import DiscussionContent from './DiscussionContent';
 import DiscussionSidebar from './DiscussionSidebar';
 import InformationBanner from './InformationsBanner';
-import useSetFont from './useSetFont';
 
 export default function DiscussionsHome() {
-  useSetFont();
   const location = useLocation();
   const postActionBarRef = useRef(null);
   const postEditorVisible = useSelector(
