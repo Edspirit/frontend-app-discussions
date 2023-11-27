@@ -47,6 +47,8 @@ initialize({
         LEARNING_BASE_URL: process.env.LEARNING_BASE_URL,
         LEARNER_FEEDBACK_URL: process.env.LEARNER_FEEDBACK_URL,
         STAFF_FEEDBACK_URL: process.env.STAFF_FEEDBACK_URL,
+        AC_LANGUAGES_API_URL: process.env.AC_LANGUAGES_API_URL,
+        AC_INSTANCE_CONFIG_API_URL: process.env.AC_INSTANCE_CONFIG_API_URL,
       }, 'DiscussionsConfig');
     },
   },
