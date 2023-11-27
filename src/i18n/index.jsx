@@ -20,7 +20,7 @@ import zhcnMessages from './messages/zh_CN.json';
 
 const messages = {
   ar: arMessages,
-  'fa-ir': faIRMessages,
+  fa: faIRMessages,
   de: deMessages,
   'es-419': es419Messages,
   fr: frMessages,
