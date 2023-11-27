@@ -28,10 +28,8 @@ import BlackoutInformationBanner from './BlackoutInformationBanner';
 import DiscussionContent from './DiscussionContent';
 import DiscussionSidebar from './DiscussionSidebar';
 import useFeedbackWrapper from './FeedbackWrapper';
-import useSetFont from './useStFont';
 
 const DiscussionsHome = () => {
-  useSetFont();
   const location = useLocation();
   const postActionBarRef = useRef(null);
   const postEditorVisible = useSelector(selectPostEditorVisible);
