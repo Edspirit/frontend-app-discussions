@@ -229,6 +229,39 @@ header {
       height: 1.75rem;
     }
   }
+  line-height: 28px;
+  font-size: 18px;
+  height: 60px;
+
+  .user-dropdown {
+    button {
+      height: 44px !important;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 28px;
+    }
+
+    span {
+      font-weight: 500;
+      line-height: 24px;
+    }
+  }
+
+  .container-xl {
+    .course-title-lockup {
+      font-size: 1.125rem;
+    }
+
+    .logo {
+      margin-top: 2px;
+    }
+  }
+
+  span:first-child {
+    font-size: 14px;
+    margin-top: 1px !important;
+    margin-bottom: -1px !important;
+  }
 }
 
 #learner-posts-link {
@@ -271,42 +304,6 @@ header {
   outline: none;
 }
 
-header {
-  line-height: 28px;
-  font-size: 18px;
-  height: 60px;
-
-  .user-dropdown {
-    button {
-      height: 44px !important;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 28px;
-    };
-
-    span {
-      font-weight: 500;
-      line-height: 24px;
-    };
-  };
-
-  .container-xl {
-    .course-title-lockup {
-      font-size: 1.125rem;
-    };
-
-    .logo {
-      margin-top: 2px;
-    };
-  };
-
-  span:first-child {
-    font-size: 14px;
-    margin-top: 1px !important;
-    margin-bottom: -1px !important;
-  };
-}
-
 #courseTabsNavigation {
   font-size: 18px;
 
@@ -320,7 +317,7 @@ header {
     .nav-item {
       padding-bottom: 8px;
     }
-  };
+  }
 }
 
 .min-content-height {

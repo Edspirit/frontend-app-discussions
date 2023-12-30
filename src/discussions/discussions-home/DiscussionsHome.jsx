@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
@@ -52,6 +52,7 @@ const DiscussionsHome = () => {
   /*  Display the content area if we are currently viewing/editing a post or creating one.
   If the window is larger than a particular size, show the sidebar for navigating between posts/topics.
   However, for smaller screens or embeds, onlyshow the sidebar if the content area isn't displayed. */
+  const inContext = new URLSearchParams(location.search).get('inContext') !== null;
   const displayContentArea = (postId || postEditorVisible || (learnerUsername && postId));
   if (displayContentArea) { displaySidebar = isOnDesktop; }
 
@@ -61,9 +62,8 @@ const DiscussionsHome = () => {
     }
   }, [path]);
 
-  return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <DiscussionContext.Provider value={{
+  const discussionContextValue = useMemo(() => (
+    {
       page,
       courseId,
       postId,
@@ -71,10 +71,14 @@ const DiscussionsHome = () => {
       enableInContextSidebar,
       category,
       learnerUsername,
-    }}
-    >
-      {!enableInContextSidebar && <Header />}
-      <main className="container-fluid d-flex flex-column p-0 w-100" id="main" tabIndex="-1">
+    }
+  ), []);
+
+  return (
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
+    <DiscussionContext.Provider value={discussionContextValue}>
+      {!inContext && <Header />}
+      <main className="container-fluid d-flex flex-column p-0 w-100 mt-3" id="main" tabIndex="-1">
         {!enableInContextSidebar && <CourseTabsNavigation activeTab="discussion" courseId={courseId} />}
         <div
           className={classNames('header-action-bar', {
