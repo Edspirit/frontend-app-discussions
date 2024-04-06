@@ -4,6 +4,8 @@ import 'regenerator-runtime/runtime';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { QueryClient, QueryClientProvider } from 'react-query';
+
 import { messages as footerMessages } from '@edx/frontend-component-footer';
 import { messages as headerMessages } from '@edx/frontend-component-header';
 import {
@@ -13,6 +15,8 @@ import {
 import { AppProvider, ErrorPage } from '@edx/frontend-platform/react';
 import { messages as paragonMessages } from '@edx/paragon';
 
+import REACT_QUERY_CONSTANTS from './constants/react-query-constants';
+import Head from './head/Head';
 import { DiscussionsHome } from './discussions';
 import appMessages from './i18n';
 import store from './store';
@@ -21,9 +25,18 @@ import './assets/favicon.ico';
 import './index.scss';
 
 subscribe(APP_READY, () => {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      ...REACT_QUERY_CONSTANTS,
+    },
+  });
+
   ReactDOM.render(
     <AppProvider store={store}>
-      <DiscussionsHome />
+      <QueryClientProvider client={queryClient}>
+        <Head />
+        <DiscussionsHome />
+      </QueryClientProvider>
     </AppProvider>,
     document.getElementById('root'),
   );
