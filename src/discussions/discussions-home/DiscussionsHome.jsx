@@ -7,10 +7,9 @@ import {
   Route, Switch, useLocation, useRouteMatch,
 } from 'react-router';
 
-import { LearningHeader as Header } from '@edx/frontend-component-header';
+import Header from '@edx/frontend-component-header';
 
 import { Spinner } from '../../components';
-import { selectCourseTabs } from '../../components/NavigationBar/data/selectors';
 import { ALL_ROUTES, DiscussionProvider, Routes } from '../../data/constants';
 import { DiscussionContext } from '../common/context';
 import {
@@ -39,7 +38,6 @@ const DiscussionsHome = () => {
   const postEditorVisible = useSelector(selectPostEditorVisible);
   const provider = useSelector(selectDiscussionProvider);
   const enableInContext = useSelector(selectEnableInContext);
-  const { courseNumber, courseTitle, org } = useSelector(selectCourseTabs);
   const { params: { page } } = useRouteMatch(`${Routes.COMMENTS.PAGE}?`);
   const { params } = useRouteMatch(ALL_ROUTES);
   const isRedirectToLearners = useShowLearnersTab();
@@ -72,7 +70,7 @@ const DiscussionsHome = () => {
       }}
       >
         {!enableInContextSidebar && (
-          <Header courseOrg={org} courseNumber={courseNumber} courseTitle={courseTitle} />
+        <Header mfeTitle="discussions.page.title" />
         )}
         <main className="container-fluid d-flex flex-column p-0 w-100" id="main" tabIndex="-1">
           {!enableInContextSidebar && <CourseTabsNavigation activeTab="discussion" courseId={courseId} />}
