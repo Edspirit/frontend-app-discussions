@@ -21,6 +21,7 @@ import ruMessages from './messages/ru.json';
 import trTRMessages from './messages/tr_TR.json';
 import ukMessages from './messages/uk.json';
 import zhcnMessages from './messages/zh_CN.json';
+import zhhkMessages from './messages/zh_HK.json';
 
 const appMessages = {
   ar: arMessages,
@@ -33,6 +34,7 @@ const appMessages = {
   pl: plMessages,
   'tr-tr': trTRMessages,
   'zh-cn': zhcnMessages,
+  'zh-hk': zhhkMessages,
   'pt-pt': ptPTMessages,
   uk: ukMessages,
   ru: ruMessages,
