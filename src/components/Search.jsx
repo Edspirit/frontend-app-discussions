@@ -79,7 +79,7 @@ const Search = () => {
       <SearchField.Label />
       <SearchField.Input
         style={{ paddingRight: '1rem' }}
-        placeholder={intl.formatMessage(postsMessages.search, { page: camelCase(page) })}
+        placeholder={intl.formatMessage(postsMessages.searchAllPosts, { page: camelCase(page) })}
       />
       <span className="py-auto px-2.5 pointer-cursor-hover">
         <Icon

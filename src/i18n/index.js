@@ -42,7 +42,7 @@ const appMessages = {
   cs: csMessages,
   'es-AR': esARMessages,
   'es-ES': esESMessages,
-  'fa-IR': faIRMessages,
+  'fa-ir': faIRMessages,
 };
 
 export default [
