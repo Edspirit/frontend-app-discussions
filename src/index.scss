@@ -561,3 +561,6 @@ header {
   word-break: break-all;
 }
 
+[dir='rtl'] .rtl-transform-icon .pgn__icon {
+  transform: scaleX(-1);
+}

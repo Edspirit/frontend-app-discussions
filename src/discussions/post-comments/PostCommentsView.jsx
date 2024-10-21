@@ -105,7 +105,7 @@ const PostCommentsView = () => {
             iconAs={Icon}
             style={{ padding: '18px' }}
             size="inline"
-            className="ml-4 mt-4"
+            className="ml-4 mt-4 rtl-transform-icon"
             onClick={() => history.push(discussionsPath(PostsPages[page], {
               courseId, learnerUsername, category, topicId,
             })(location))}
