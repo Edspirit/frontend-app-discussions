@@ -8,7 +8,7 @@ import {
   matchPath, Route, Routes, useLocation, useMatch,
 } from 'react-router-dom';
 
-import { LearningHeader as Header } from '@edx/frontend-component-header';
+import Header from '@edx/frontend-component-header';
 
 import { Spinner } from '../../components';
 import selectCourseTabs from '../../components/NavigationBar/data/selectors';
@@ -27,7 +27,7 @@ import { selectPostEditorVisible } from '../posts/data/selectors';
 import { isCourseStatusValid } from '../utils';
 import useFeedbackWrapper from './FeedbackWrapper';
 
-const FooterSlot = lazy(() => import('@openedx/frontend-slot-footer'));
+const FooterSlot = lazy(() => import('@edx/frontend-component-footer'));
 const PostActionsBar = lazy(() => import('../posts/post-actions-bar/PostActionsBar'));
 const CourseTabsNavigation = lazy(() => import('../../components/NavigationBar/CourseTabsNavigation'));
 const LegacyBreadcrumbMenu = lazy(() => import('../navigation/breadcrumb-menu/LegacyBreadcrumbMenu'));
@@ -44,7 +44,7 @@ const DiscussionsHome = () => {
   const provider = useSelector(selectDiscussionProvider);
   const enableInContext = useSelector(selectEnableInContext);
   const {
-    courseNumber, courseTitle, org, courseStatus, isEnrolled,
+    courseStatus, isEnrolled,
   } = useSelector(selectCourseTabs);
   const isUserLearner = useSelector(selectIsUserLearner);
   const pageParams = useMatch(ROUTES.COMMENTS.PAGE)?.params;
@@ -81,7 +81,7 @@ const DiscussionsHome = () => {
   return (
     <Suspense fallback={(<Spinner />)}>
       <DiscussionContext.Provider value={discussionContextValue}>
-        {!enableInContextSidebar && (<Header courseOrg={org} courseNumber={courseNumber} courseTitle={courseTitle} />)}
+        {!enableInContextSidebar && (<Header mfeTitle="discussions.page.title" />)}
         <main className="container-fluid d-flex flex-column p-0 w-100" id="main" tabIndex="-1">
           {!enableInContextSidebar && <CourseTabsNavigation />}
           {(isEnrolled || !isUserLearner) && (
