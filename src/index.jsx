@@ -10,7 +10,6 @@ import {
 } from '@edx/frontend-platform';
 import { AppProvider, ErrorPage } from '@edx/frontend-platform/react';
 
-import Head from './components/Head/Head';
 import { DiscussionsHome } from './discussions';
 import messages from './i18n';
 import store from './store';
@@ -20,7 +19,6 @@ import './index.scss';
 subscribe(APP_READY, () => {
   ReactDOM.render(
     <AppProvider store={store}>
-      <Head />
       <DiscussionsHome />
     </AppProvider>,
     document.getElementById('root'),
@@ -40,6 +38,7 @@ initialize({
         LEARNING_BASE_URL: process.env.LEARNING_BASE_URL,
         LEARNER_FEEDBACK_URL: process.env.LEARNER_FEEDBACK_URL,
         STAFF_FEEDBACK_URL: process.env.STAFF_FEEDBACK_URL,
+        AC_INSTANCE_CONFIG_API_URL: process.env.AC_INSTANCE_CONFIG_API_URL,
       }, 'DiscussionsConfig');
     },
   },
