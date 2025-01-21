@@ -69,6 +69,11 @@ const messages = defineMessages({
     defaultMessage: 'Unnamed subcategory',
     description: 'Text to display in place of topic name if topic name is empty',
   },
+  unnamedTopic: {
+    id: 'discussions.topic.unnamedTopic',
+    defaultMessage: 'Unnamed topic',
+    description: 'Text shown when a topic has no name',
+  },
 });
 
 export default messages;

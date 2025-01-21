@@ -1,0 +1,9 @@
+{
+  "discussions.posts.actionBar.searchAllPosts": "البحث في جميع المشاركات",
+  "discussions.posts.actionBar.searchTopics": "البحث في المواضيع",
+  "discussions.posts.actionBar.searchLearners": "البحث عن المتعلمين",
+  "discussions.posts.actionBar.searchMyPosts": "البحث في مشاركاتي",
+  "discussions.learner.sortFilterStatus": "جميع المتعلمين مرتبين حسب {sort, select, flagged {النشاط المبلغ عنه} activity {معظم النشاط} other {{sort}}}",
+  "discussions.topic.unnamedTopic": "موضوع بدون اسم",
+  "General": "عام"
+} 

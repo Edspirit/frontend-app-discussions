@@ -184,16 +184,7 @@ const PostFilterBar = () => {
       className="filter-bar collapsible-card-lg border-0"
     >
       <Collapsible.Trigger className="collapsible-trigger border-0">
-        <span className="text-primary-500 pr-4 font-style">
-          {intl.formatMessage(messages.sortFilterStatus, {
-            own: false,
-            type: currentFilters.postType,
-            sort: currentSorting,
-            status: currentFilters.status,
-            cohortType: selectedCohort?.name ? 'group' : 'all',
-            cohort: capitalize(selectedCohort?.name),
-          })}
-        </span>
+        <span className="text-primary-500 pr-4 font-style" />
         <span>
           <Collapsible.Visible whenClosed>
             <Icon src={Tune} />

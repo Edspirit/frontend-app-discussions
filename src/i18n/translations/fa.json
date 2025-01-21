@@ -1,0 +1,9 @@
+{
+  "discussions.posts.actionBar.searchAllPosts": "جستجو در همه پست‌ها",
+  "discussions.posts.actionBar.searchTopics": "جستجو در موضوعات",
+  "discussions.posts.actionBar.searchLearners": "جستجوی یادگیرندگان",
+  "discussions.posts.actionBar.searchMyPosts": "جستجو در پست‌های من",
+  "discussions.learner.sortFilterStatus": "همه یادگیرندگان مرتب‌شده بر اساس {sort, select, flagged {فعالیت گزارش‌شده} activity {بیشترین فعالیت} other {{sort}}}",
+  "discussions.topic.unnamedTopic": "موضوع بدون نام",
+  "General": "عمومی"
+} 

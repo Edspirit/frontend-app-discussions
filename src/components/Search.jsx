@@ -4,7 +4,6 @@ import React, {
 
 import { Icon, SearchField } from '@openedx/paragon';
 import { Search as SearchIcon } from '@openedx/paragon/icons';
-import camelCase from 'lodash/camelCase';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useIntl } from '@edx/frontend-platform/i18n';
@@ -12,7 +11,6 @@ import { useIntl } from '@edx/frontend-platform/i18n';
 import DiscussionContext from '../discussions/common/context';
 import { setUsernameSearch } from '../discussions/learners/data';
 import { setSearchQuery } from '../discussions/posts/data';
-import postsMessages from '../discussions/posts/post-actions-bar/messages';
 import { setFilter as setTopicFilter } from '../discussions/topics/data/slices';
 
 const Search = () => {
@@ -35,6 +33,21 @@ const Search = () => {
   } else {
     currentValue = learnerSearch;
   }
+
+  const getPlaceholder = () => {
+    switch (page) {
+      case 'topics':
+        return intl.formatMessage({ id: 'discussions.posts.actionBar.searchTopics', defaultMessage: 'Search topics' });
+      case 'posts':
+        return intl.formatMessage({ id: 'discussions.posts.actionBar.searchAllPosts', defaultMessage: 'Search all posts' });
+      case 'learners':
+        return intl.formatMessage({ id: 'discussions.posts.actionBar.searchLearners', defaultMessage: 'Search learners' });
+      case 'my-posts':
+        return intl.formatMessage({ id: 'discussions.posts.actionBar.searchMyPosts', defaultMessage: 'Search my posts' });
+      default:
+        return '';
+    }
+  };
 
   const onClear = useCallback(() => {
     dispatch(setSearchQuery(''));
@@ -79,7 +92,7 @@ const Search = () => {
       <SearchField.Label />
       <SearchField.Input
         style={{ paddingRight: '1rem' }}
-        placeholder={intl.formatMessage(postsMessages.search, { page: camelCase(page) })}
+        placeholder={getPlaceholder()}
       />
       <span className="py-auto px-2.5 pointer-cursor-hover">
         <Icon

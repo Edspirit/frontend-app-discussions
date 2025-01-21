@@ -52,7 +52,7 @@ const Topic = ({ topicId, showDivider, index }) => {
         <div className="d-flex flex-column flex-fill" style={{ minWidth: 0 }}>
           <div className="d-flex flex-column justify-content-start mw-100 flex-fill">
             <div className="topic-name text-truncate">
-              {name || intl.formatMessage(messages.unnamedTopicSubCategories)}
+              {intl.formatMessage({ id: name, defaultMessage: name }) || intl.formatMessage(messages.unnamedTopic)}
             </div>
           </div>
           <div className="d-flex align-items-center mt-2.5" style={{ marginBottom: '2px' }}>
